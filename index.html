@@ -3,11 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Simple Website with Tabs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        .nav a {
+            padding: 14px 20px;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            display: none;
+            padding: 20px;
+        }
+        .content.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Personal Website</h1>
-    <p>This is my personal website hosted on GitHub Pages.</p>
-    <img src="images/seal.jpg" alt="good boy">
+
+    <div class="header">
+        <h1>My Simple Website</h1>
+        <p>Welcome to my simple website with tabs.</p>
+    </div>
+
+    <div class="nav">
+        <a href="#" class="tab-link" onclick="openTab(event, 'Home')">Home</a>
+        <a href="#" class="tab-link" onclick="openTab(event, 'About')">About</a>
+        <a href="#" class="tab-link" onclick="openTab(event, 'Contact')">Contact</a>
+    </div>
+
+    <div id="Home" class="content active">
+        <h2>Home</h2>
+        <p>Welcome to the home page.</p>
+    </div>
+
+    <div id="About" class="content">
+        <h2>About</h2>
+        <p>This is the about page.</p>
+    </div>
+
+    <div id="Contact" class="content">
+        <h2>Contact</h2>
+        <p>This is the contact page.</p>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, content, tablinks;
+            content = document.getElementsByClassName("content");
+            for (i = 0; i < content.length; i++) {
+                content[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
 </body>
 </html>
