@@ -3,70 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website with Tabs</title>
+    <title>Simple Website with Sidebar Tabs</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Figtree, sans-serif;
             margin: 0;
             padding: 0;
-        }
-        .header {
-            background-color: #4CAF50;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-        .nav {
             display: flex;
-            justify-content: center;
+        }
+        .sidebar {
+            width: 160px;
             background-color: #333;
+            padding-top: 20px; /* Add padding to account for fixed header */
+            position: fixed;
+            height: 100%;
+            top: 0;
+            left: 0;
         }
-        .nav a {
-            padding: 14px 20px;
-            display: block;
-            color: white;
-            text-align: center;
+        .sidebar a {
+            padding: 15px;
             text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
         }
-        .nav a:hover {
-            background-color: #ddd;
-            color: black;
+        .sidebar a:hover {
+            background-color: #575757;
+            font-size: 20px;
+        }
+        .content-container {
+            margin-left: 200px; /* Same as the width of the sidebar */
+            padding-top: 80px; /* Add padding to account for fixed header */
+            padding: 20px;
+            width: calc(100% - 200px);
         }
         .content {
             display: none;
-            padding: 20px;
+/*            background-color: #d3e3e6;*/
+            background-color: #ffffff;
+
+/*            background-color: #575757;*/
+
         }
         .content.active {
             display: block;
+        }
+        .header {
+/*            background-color: #637a8a;*/
+            background-color: #575757;
+            font-size: 12px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            width: 100%;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensure header is above other content */
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>My Simple Website</h1>
-        <p>Welcome to my simple website with tabs.</p>
-    </div>
-
-    <div class="nav">
+    <div class="sidebar">
         <a href="#" class="tab-link" onclick="openTab(event, 'Home')">Home</a>
-        <a href="#" class="tab-link" onclick="openTab(event, 'About')">About</a>
-        <a href="#" class="tab-link" onclick="openTab(event, 'Contact')">Contact</a>
+        <a href="#" class="tab-link" onclick="openTab(event, 'Bio')">Bio</a>
+        <a href="#" class="tab-link" onclick="openTab(event, 'Music')">Music</a>
+        <a href="#" class="tab-link" onclick="openTab(event, 'Trips')">Trips and Stories</a>
+        <a href="#" class="tab-link" onclick="openTab(event, 'Writing')">Writing</a>
     </div>
 
-    <div id="Home" class="content active">
-        <h2>Home</h2>
-        <p>Welcome to the home page.</p>
-    </div>
+    <div class="content-container">
+        <div id="Home" class="content active">
+            <h2>Home</h2>
+            <p>Welcome to the home page.</p>
+        </div>
 
-    <div id="About" class="content">
-        <h2>About</h2>
-        <p>This is the about page.</p>
-    </div>
+        <div id="Bio" class="content">
+            <h2>Bio</h2>
+            <p>This is the Bio page.</p>
+        </div>
 
-    <div id="Contact" class="content">
-        <h2>Contact</h2>
-        <p>This is the contact page.</p>
+        <div id="Music" class="content">
+            <h2>Music</h2>
+            <p>These are all songs that I've written and recorded over the years.</p>
+        </div>
+
+        <div id="Trips" class="content">
+            <h2>Trips and Stories</h2>
+            <p>Written accounts worth sharing.</p>
+        </div>
+
+        <div id="Writing" class="content">
+            <h2>Writing</h2>
+            <p>This is the Writing page.</p>
+        </div>
     </div>
 
     <script>
@@ -87,3 +119,9 @@
 
 </body>
 </html>
+
+
+<!-- Outline:Home: just links to all the subpages. Links to social media and Linked in 
+Waht do I actually want here? Really something kind of similar to Jds blog, where there are dated links under each catageory. Possibly cool highlight pictures on the main tabs. I should look at that for inspiration. 
+-->
+
