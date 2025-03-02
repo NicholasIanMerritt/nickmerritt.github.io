@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: black;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-right: 30px; /* Ensures space between links and right edge */
+    box-sizing: border-box; /* Ensures padding is accounted for in width */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.container {
+    flex: 1;
+    margin-top: 80px;
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start; /* Align items to the top */
+    height: auto;
+    flex-direction: column; /* Ensures proper layout for toggles */
+    padding-left: 5%; /* Adds spacing from the left edge */
+}
+
+.container img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.footer {
+    background-color: black;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 50px; /* Adds spacing above footer */
+}
+
+.toggle-container {
+    margin: 20px 0; /* Removes auto-centering and spaces toggles properly */
+    width: 50%; /* Makes toggles half the width of the screen */
+    text-align: left; /* Aligns toggle text to the left */
+}
+
+.toggle-label {
+    display: block;
+    background-color: #333;
+    color: white;
+    padding: 36px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: left;
+    width: 100%; /* Takes up the full width of its container */
+    font-size: 24px; /* Increases font size */
+}
+
+.toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    background-color: #222;
+    color: white;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 0 15px;
+    width: 80%; /* Expands to 80% of the screen when toggled */
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .toggle-content {
+    max-height: 200px;
+    padding: 10px;
+}

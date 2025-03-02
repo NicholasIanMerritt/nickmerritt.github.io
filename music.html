@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick Merritt - Music</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .music-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex;
+            gap: 100px;
+            text-align: left;
+            line-height: 2.0;
+        }
+
+        .music-content img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .music-text {
+            max-width: 45%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="navbar-placeholder"></div>
+    
+    <script>
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("navbar-placeholder").innerHTML = data)
+            .catch(error => console.error("Error loading navbar:", error));
+    </script>
+    
+    <div class="container">
+        <h1>Frettchen, 2018-2019</h1>
+        
+        <div class="music-content">
+            <img src="images/frettchen.png" alt="Frettchen Band">
+            <div class="music-text">
+                <p>Frettchen was a music project that included myself on keys, Jack Schrott on guitar and vocals, Stirling Rutty on bass, and Andrew Eaton on drums. We wrote quite a few songs together and played at lots of house parties and small shows on campus (including an ill-fated accidental invite to the admitted students day dinner. Think loud rock music in the corner while people and their families are trying to eat). Recording was done mostly in Colorado College's music studio in Packard Hall. We recorded 7 or 8 songs in the spring of my Senior Year. I did the mixing and mastering on the tracks, 2 of which we put up on Spotify. All the songs were co-written and co-produced by the band. Our friend Carson Fritz did the album art. A few more songs that never made it to Spotify are uploaded as well. These songs will always bring back fond memories.</p>
+            </div>
+        </div>
+        <p>Jack brought <em>Vain</em> to the band pretty much finished, we just added our parts. It became one of our favorites. </p>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/425Ens4QlJ8NnzVoePWbmZ?utm_source=generator&theme=0" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        
+        <p style="text-align: left; margin-top: 20px;">
+        <p><em>Pick a Song, John</em> was a classic to open or close with. During the breakdown near the end, Andrew would sometimes thrash 1/8th notes on the snare during the build long enough to keep the whole band on their toes.</p> 
+        </p>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7Jz7RFu4lga5Li5DuilC8G?utm_source=generator&theme=0" width="100%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+     
+         <div class="audio-player">
+                <h3>Ketching Up</h3>
+                <p>This song never made to Spotify. The first part of the song was wild and a good choice for enciting chaos on the dance floor. Stirling had some particularly good bass licks in this one. Despite spending 16 hours over 4 do-overs trying to mix it, I failed to tame the wild recording, but this was my best attempt.</p> 
+                <audio controls>
+                    <source src="music/Ketching_Up_MM68.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+
+    </div>
+    
+    <div class="footer">
+        <p>Nick Merritt | Last update: <span id="date_last_updated"></span></p>
+    </div>
+
+    <script>
+        const date = new Date();
+        const formattedDate = date.getFullYear() + '-' + 
+                              String(date.getMonth() + 1).padStart(2, '0') + '-' + 
+                              String(date.getDate()).padStart(2, '0');
+        document.getElementById("date_last_updated").textContent = formattedDate;
+    </script>
+</body>
+</html>
