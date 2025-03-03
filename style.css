@@ -21,6 +21,7 @@ body {
     width: 100%;
     padding-right: 30px; /* Ensures space between links and right edge */
     box-sizing: border-box; /* Ensures padding is accounted for in width */
+    font-family: 'Courier New', Courier, monospace; /* Custom font for navbar */
 }
 
 .navbar a {
